@@ -12,7 +12,8 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #f8f6f6;
+    color: black;
     padding: 15px 0;
     text-align: center;
 }
@@ -28,7 +29,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #080808;
     text-decoration: none;
     font-size: 18px;
     font-weight: 600;
@@ -130,9 +131,6 @@ footer .social-links a {
 }
 p{
     margin: 15px;
-}
-nav .logo img {
-    filter: invert(0.8) brightness(100%) contrast(100%);
 }
 nav .logo img {
     width: 120px;  /* Adjust the width of the logo */
