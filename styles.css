@@ -137,6 +137,11 @@ nav .logo img {
     height: auto;
     transition: filter 0.3s ease;
 }
+.catalog-item img{
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+}
 /* Responsive Design */
 @media (max-width: 768px) {
     nav ul {
