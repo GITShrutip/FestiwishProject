@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Festiwish</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #ffffff url('https://www.transparenttextures.com/patterns/white-wall.png') repeat;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-container img {
+            width: 120px;
+        }
+
+        .logo-container h1 {
+            font-size: 1.5rem;
+            color: #333;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slides img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .slider-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .slider-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .section-title {
+            margin: 20px 0;
+        }
+
+        footer {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <header id="navbar">
+        <div class="logo-container">
+            <img src="img/Picture1.png" alt="Candle Co.">
+            <h1>FESTIWISH</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#catalog">Catalog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Slider -->
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1 class="animated-text">Welcome to Festiwish</h1>
+            <p class="animated-text">Discover the art of handcrafted candles, bringing warmth and elegance to every occasion.</p>
+        </div>
+    </section>
+
+    <style>
+        /* Hero Section Styles */
+        #hero {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #555;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated-text {
+            animation: fadeIn 2s ease-in-out;
+        }
+    </style>
+
+    <!-- JavaScript for Slider -->
+    <script>
+        const slides = document.querySelector('.slides');
+        const images = document.querySelectorAll('.slides img');
+        const prev = document.getElementById('prev');
+        const next = document.getElementById('next');
+
+        let index = 0;
+
+        function showSlide(i) {
+            index = (i + images.length) % images.length;
+            slides.style.transform = `translateX(${-index * 100}%)`;
+        }
+
+        prev.addEventListener('click', () => showSlide(index - 1));
+        next.addEventListener('click', () => showSlide(index + 1));
+
+        setInterval(() => showSlide(index + 1), 5000);
+    </script>
+
+    <!-- Other Sections -->
+    <section id="products">
+        <div class="section-title">
+            <h2>Featured Products</h2>
+        </div>
+        <div class="product-container">
+            <div class="product">
+                <img src="img/candle1.jpg" alt="Scented Candle">
+                <h3>Lavender Bliss</h3>
+                <p>Relax with the soothing scent of lavender.</p>
+                <span>Rs.649</span>
+                <a href="#" class="btn-buy">Buy Now</a>
+            </div>
+            <div class="product">
+                <img src="img/candle2.jpg" alt="Citrus Twist">
+                <h3>Blue Ocean</h3>
+                <p>Refresh your space with the invigorating citrus scent.</p>
+                <span>Rs.449</span>
+                <a href="#" class="btn-buy">Buy Now</a>
+            </div>
+        </div>
+    </section>
+    <!-- Catalog Section -->
+    <section id="catalog">
+        <div class="section-title">
+            <h2>Our Catalog</h2>
+        </div>
+        <div class="catalog-container">
+            <div class="catalog-item">
+                <h3>Lavender Bliss</h3>
+                <p>Rs.449</p>
+            </div>
+            <div class="catalog-item">
+                <h3>Blue Ocean</h3>
+                <p>Rs.649</p>
+            </div>
+            <div class="catalog-item">
+                <h3>Rose Petal</h3>
+                <p>Rs.499</p>
+            </div>
+            <div class="catalog-item">
+                <h3>Mahak-The Aroma Hamper</h3>
+                <p>Rs.999</p>
+            </div>
+            <div class="catalog-item">
+                <h3>Personalised Hamper</h3>
+                <p>Contact For Details</p>
+            </div>
+            <div class="catalog-item">
+                <h3>Pack of 2</h3>
+                <p>Rs.200</p>
+            </div>
+            <div class="catalog-item">
+                <h3>Pack of 6 Tablets</h3>
+                <p>Rs.149</p>
+            </div>
+            <div class="catalog-item">
+                <h3>Ancient Oudh</h3>
+                <p>Rs.749</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+        </div>
+        <div class="contact-container">
+            <p><strong>Owner:</strong> Festiwish Team</p>
+            <p><strong>Email:</strong> festiwishgifting@gmail.com</p>
+            <p><strong>Phone:</strong> +91-1234567890</p>
+        </div>
+    </section>
+    <footer id="contact">
+        <p>&copy; xyz. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com">Instagram</a>
+            <a href="https://www.facebook.com">Facebook</a>
+            <a href="mailto:festiwishgifting@gmail.com">Contact Us</a>
+        </div>
+    </footer>
+</body>
+
+</html>
